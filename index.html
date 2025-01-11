@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - [Twoje Imię]</title>
+    <!-- Link do pliku CSS -->
+    <link rel="stylesheet" href="design.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Przełącznik trybu ciemny/jasny -->
+    <div class="theme-toggle">
+      <button id="themeSwitcher" class="btn btn-outline-light">
+        🌙 Tryb Ciemny
+      </button>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-lg"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">[Twoje Imię]</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">O mnie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Umiejętności</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Cennik</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Opinie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="vh-100 d-flex justify-content-center align-items-center text-center gradient-bg hero"
+    >
+      <div data-aos="fade-up">
+        <h1 class="display-3 gradient-text">
+          Cześć! Jestem <span class="text-warning">[Twoje Imię]</span>
+        </h1>
+        <p class="lead text-light mt-3">
+          Tworzę nowoczesne strony i aplikacje internetowe.
+        </p>
+        <div class="mt-4">
+          <a href="#portfolio" class="btn btn-custom btn-lg">Zobacz projekty</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg ms-3"
+            >Kontakt</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light text-dark position-relative">
+      <div class="gradient-background"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-5 text-center mb-4 mb-lg-0">
+            <div class="about-img-wrapper position-relative">
+              <img
+                src="/wtrojke.jpg"
+                alt="Zdjęcie profilowe"
+                class="img-fluid rounded-circle shadow-lg about-img"
+              />
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <h2 class="display-4 mb-4 gradient-text">
+              Cześć! Jestem [Twoje Imię]
+            </h2>
+            <p class="lead mb-4">
+              Tworzę nowoczesne i funkcjonalne strony oraz aplikacje
+              internetowe. Moim celem jest łączenie estetyki z praktycznymi
+              rozwiązaniami.
+            </p>
+            <div class="row">
+              <div class="col-sm-4 text-center">
+                <i class="fas fa-project-diagram fa-3x text-primary mb-2"></i>
+                <h3 class="counter text-primary" data-count="100">0</h3>
+                <p>Projektów ukończonych</p>
+              </div>
+              <div class="col-sm-4 text-center">
+                <i class="fas fa-smile fa-3x text-success mb-2"></i>
+                <h3 class="counter text-success" data-count="50">0</h3>
+                <p>Zadowolonych klientów</p>
+              </div>
+              <div class="col-sm-4 text-center">
+                <i class="fas fa-clock fa-3x text-warning mb-2"></i>
+                <h3 class="counter text-warning" data-count="5">0</h3>
+                <p>Lat doświadczenia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-5 bg-dark text-light">
+      <div class="container">
+        <h2 class="display-4 gradient-text text-center mb-5">Moja podróż</h2>
+        <div class="timeline-wrapper position-relative">
+          <div class="timeline-line position-absolute"></div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="timeline-content">
+                <h5>2015</h5>
+                <p>Rozpocząłem naukę programowania.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-5 bg-dark text-light">
+      <div class="container">
+        <h2 class="display-4 gradient-text text-center mb-4">Umiejętności</h2>
+        <p class="lead text-center mb-5">
+          Technologie, w których się specjalizuję:
+        </p>
+        <div class="row text-center">
+          <div class="col-md-4 mb-4">
+            <i class="fab fa-html5 fa-4x text-warning"></i>
+            <h4 class="mt-3">HTML5</h4>
+            <p>Tworzenie semantycznych i nowoczesnych stron internetowych.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="fab fa-css3-alt fa-4x text-primary"></i>
+            <h4 class="mt-3">CSS3</h4>
+            <p>Zaawansowane style, animacje i responsywność.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="fab fa-js-square fa-4x text-warning"></i>
+            <h4 class="mt-3">JavaScript</h4>
+            <p>Dynamiczne interfejsy i interakcje użytkownika.</p>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4 mb-4">
+            <i class="fab fa-react fa-4x text-info"></i>
+            <h4 class="mt-3">React</h4>
+            <p>Komponentowe podejście do budowy aplikacji.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="fab fa-node fa-4x text-success"></i>
+            <h4 class="mt-3">Node.js</h4>
+            <p>Backendowe rozwiązania dla nowoczesnych aplikacji.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="fas fa-database fa-4x text-secondary"></i>
+            <h4 class="mt-3">Bazy danych</h4>
+            <p>Praca z MySQL, MongoDB i innymi technologiami.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-dark text-light">
+      <div class="container">
+        <h2 class="display-4 gradient-text text-center mb-4">Portfolio</h2>
+        <p class="lead text-center mb-5">
+          Oto wybrane projekty – kliknij, aby zobaczyć szczegóły.
+        </p>
+
+        <!-- Filtry -->
+        <div class="text-center mb-4">
+          <button class="btn filter-btn active" data-filter="all">
+            Wszystkie
+          </button>
+          <button class="btn filter-btn" data-filter="web">Strony WWW</button>
+          <button class="btn filter-btn" data-filter="app">Aplikacje</button>
+          <button class="btn filter-btn" data-filter="design">Design</button>
+        </div>
+
+        <!-- Podgląd projektów -->
+        <div class="row portfolio-container g-4">
+          <!-- Projekty -->
+          <!-- Dynamika generowana w JavaScript -->
+        </div>
+
+        <!-- Przycisk Załaduj więcej -->
+        <div class="col-12 text-center mt-4">
+          <button id="loadMoreBtn" class="btn btn-outline-warning">
+            Załaduj więcej
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Template dla modalów -->
+    <div id="modalsContainer"></div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+      <div class="container text-center">
+        <h2 class="display-4 gradient-text mb-4">Cennik</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Podstawowy</h3>
+              <p>Idealny dla małych projektów.</p>
+              <p class="price">500 zł</p>
+              <button class="btn-custom">Zamów</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Profesjonalny</h3>
+              <p>Dla średnich firm i startupów.</p>
+              <p class="price">1500 zł</p>
+              <button class="btn-custom">Zamów</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Ekskluzywny</h3>
+              <p>Zaawansowane funkcje i wsparcie.</p>
+              <p class="price">3000 zł</p>
+              <button class="btn-custom">Zamów</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-light text-dark">
+      <div class="container">
+        <h2 class="display-4 gradient-text text-center mb-4">FAQ</h2>
+        <p class="lead text-center mb-5">Najczęściej zadawane pytania:</p>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Jak długo trwa stworzenie strony?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Czas tworzenia strony zależy od złożoności projektu, zazwyczaj
+                od 1 do 4 tygodni.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Czy oferujesz wsparcie po zakończeniu projektu?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Tak, zapewniam wsparcie techniczne oraz możliwość dalszych
+                aktualizacji strony.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Jak mogę zamówić projekt?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Wystarczy skontaktować się ze mną za pomocą formularza
+                kontaktowego lub telefonicznie.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light text-dark">
+      <div class="container">
+        <h2 class="display-4 gradient-text text-center mb-4">Kontakt</h2>
+        <p class="lead text-center mb-5">
+          Masz pytania? Skontaktuj się ze mną:
+        </p>
+        <div class="row">
+          <!-- Formularz kontaktowy -->
+          <div class="col-md-6">
+            <div class="card shadow p-4">
+              <h5 class="card-title text-center mb-4">Formularz kontaktowy</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Imię</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Wpisz swoje imię"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Wpisz swój e-mail"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Wiadomość</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    placeholder="Wpisz swoją wiadomość"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Wyślij
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Informacje kontaktowe -->
+          <div class="col-md-6">
+            <div class="card shadow p-4 text-center">
+              <h5 class="card-title mb-4">Moje dane kontaktowe</h5>
+              <p class="mb-2">
+                <i class="fas fa-envelope text-primary"></i> email@example.com
+              </p>
+              <p class="mb-2">
+                <i class="fas fa-phone text-primary"></i> +48 123 456 789
+              </p>
+              <p class="mb-4">
+                <i class="fas fa-map-marker-alt text-primary"></i> Warszawa,
+                Polska
+              </p>
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.5441060157!2d21.0122287!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669b5e6d33%3A0xc9bcdba4f5930b12!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2spl!4v1675974867444!5m2!1sen!2spl"
+                  width="100%"
+                  height="250"
+                  style="border: 0; border-radius: 10px"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button id="scrollToTop" class="scroll-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="py-3 text-center footer-gradient">
+      <p class="mb-0">&copy; 2024 [Twoje Imię]. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

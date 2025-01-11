@@ -1,0 +1,394 @@
+/* Ogólne style */
+body {
+  background-color: #121212; /* Ciemne tło */
+  color: #ffffff; /* Jasny tekst */
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  scrollbar-gutter: stable; /* Stabilizacja szerokości paska */
+  scrollbar-color: #f9a826 #1b1f3b; /* Kolory thumb i track */
+  scrollbar-width: thin; /* Cieńszy scrollbar */
+}
+
+/* Siatka i układ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+section:nth-child(even) {
+  background-color: #1b1f3b; /* Ciemny granat */
+}
+
+section:nth-child(odd) {
+  background-color: #23284d; /* Jaśniejszy granat */
+}
+
+/* Nagłówki */
+h1,
+h2,
+h3 {
+  color: #ffcc66; /* Jaśniejszy, złoty kolor */
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Subtelny cień */
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Paragrafy */
+p {
+  color: #f0f0f0; /* Jaśniejszy szary */
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Ramka zdjęcia w sekcji About */
+.about-img-wrapper {
+  position: relative;
+  display: inline-block;
+  border: 12px solid #f9a826; /* Ramka z lekkim zaokrągleniem */
+  border-radius: 50%; /* Pełna zaokrąglona ramka */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img {
+  border-radius: 50%; /* Dopasowanie obrazu do okrągłej ramki */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt hover dla ramki */
+.about-img-wrapper:hover {
+  transform: scale(1.01); /* Subtelne powiększenie całej ramki */
+  border-color: #f76c5e; /* Zmiana koloru ramki */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Delikatny cień */
+}
+
+.about-img-wrapper:hover .about-img {
+  transform: scale(1.01); /* Subtelniejsze powiększenie obrazu */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Subtelny cień dla obrazu */
+}
+
+/* Efekt animacji dla wewnętrznej poświaty */
+.about-img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Dopasowanie do okrągłej ramki */
+  box-shadow: 0 0 5px rgba(249, 168, 38, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1.01); /* Subtelniejsze powiększenie poświaty */
+}
+
+.about-img-wrapper:hover::after {
+  opacity: 1;
+  transform: scale(1.1); /* Subtelniejszy efekt powiększenia poświaty */
+  box-shadow: 0 0 10px rgba(247, 108, 94, 0.8); /* Delikatniejsza poświata */
+}
+
+/* Przycisk */
+.btn-custom {
+  background: linear-gradient(45deg, #ffcc66, #f76c5e); /* Gradient */
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, #f76c5e, #ffcc66);
+  box-shadow: 0 5px 15px rgba(255, 204, 102, 0.5);
+}
+
+/* Gradientowe tło */
+.gradient-bg {
+  background: linear-gradient(135deg, #23284d, #1b1f3b);
+}
+
+/* Animacje Timeline */
+.timeline {
+  position: relative;
+  padding-left: 20px;
+  border-left: 4px solid #f9a826;
+}
+
+.timeline-line {
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #f9a826, #f76c5e);
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: -1;
+}
+
+.timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.timeline-icon {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f76c5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 5px 15px rgba(247, 108, 94, 0.6);
+}
+
+.timeline-content {
+  margin-left: 80px;
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content h5 {
+  font-size: 1.4rem;
+  color: #f9a826;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.filter-btn {
+  background-color: #f0f0f0; /* Jasny szary kolor dla minimalizmu */
+  border: 1px solid #ccc; /* Cienka obramówka */
+  border-radius: 25px; /* Zaokrąglone krawędzie */
+  padding: 10px 20px; /* Wygodna przestrzeń wokół tekstu */
+  color: #333; /* Neutralny kolor tekstu */
+  font-size: 14px; /* Czytelny rozmiar czcionki */
+  font-weight: bold;
+  cursor: pointer; /* Wskazuje na interaktywność */
+  transition: all 0.3s ease; /* Gładkie przejścia */
+}
+
+.filter-btn:hover {
+  background-color: #333; /* Ciemniejsze tło przy najechaniu */
+  color: #fff; /* Jasny tekst na ciemnym tle */
+}
+
+.filter-btn.active {
+  background-color: #007bff; /* Kolor podkreślający aktywny stan */
+  color: #fff; /* Jasny tekst */
+  border-color: #0056b3; /* Dopasowana obramówka */
+}
+
+.filter-btn:focus {
+  outline: none; /* Usuń domyślny focus */
+  box-shadow: 0 0 5px #007bff; /* Dodaj subtelny cień focusa */
+}
+
+/* Karty portfolio */
+.portfolio-item {
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.project {
+  display: none; /* Domyślnie ukrywamy wszystkie projekty */
+}
+
+.project.visible {
+  display: block; /* Wyświetlamy widoczne projekty */
+}
+
+#loadMoreBtn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Modal */
+.modal-content {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #444;
+}
+
+.modal-body img {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  border-top: 1px solid #444;
+}
+
+.modal-content img {
+  border-radius: 10px;
+}
+
+.modal-content .btn-secondary {
+  background-color: #444;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content .btn-secondary:hover {
+  background-color: #f76c5e;
+}
+
+/* Cennik */
+.pricing-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #1b1f3b;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h3 {
+  margin-bottom: 10px;
+  color: #f76c5e;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  color: #f9a826;
+}
+
+/* Stylizacja przycisku Scroll na Górę */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #f76c5e, #f9a826);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-to-top:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(247, 108, 94, 0.7);
+}
+
+/* Stopka */
+.footer-gradient {
+  background: linear-gradient(135deg, #1b1f3b, #23284d);
+  color: #e6e6e6;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Dla przeglądarek obsługujących pseudo-klasy ::-webkit-scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Szerokość paska przewijania */
+}
+
+::-webkit-scrollbar-track {
+  background: #1b1f3b; /* Kolor tła paska przewijania */
+  border-radius: 10px; /* Zaokrąglenie tła */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    #f76c5e,
+    #f9a826
+  ); /* Gradientowy kształt thumb */
+  border-radius: 10px; /* Zaokrąglenie uchwytu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Delikatny cień */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg,
+    #f9a826,
+    #f76c5e
+  ); /* Inwersja gradientu przy hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Większy cień przy hover */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
