@@ -283,3 +283,21 @@ loadMoreButton.addEventListener("click", () => {
 
 // Renderuj początkowe portfolio
 document.addEventListener("DOMContentLoaded", () => renderPortfolio());
+
+// Dodanie responsywności
+window.addEventListener("resize", () => {
+  const windowWidth = window.innerWidth;
+  if (windowWidth < 768) {
+    portfolioContainer.style.display = "block";
+    portfolioContainer.style.textAlign = "center";
+  } else if (windowWidth < 1024) {
+    portfolioContainer.style.display = "flex";
+    portfolioContainer.style.flexWrap = "wrap";
+    portfolioContainer.style.justifyContent = "center";
+  } else {
+    portfolioContainer.style.display = "grid";
+    portfolioContainer.style.gridTemplateColumns =
+      "repeat(auto-fit, minmax(300px, 1fr))";
+    portfolioContainer.style.gap = "15px";
+  }
+});
