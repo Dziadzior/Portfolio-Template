@@ -226,6 +226,7 @@ let visibleProjects = 6;
 let currentCategory = "all";
 let isShowingAll = false;
 
+// Renderowanie dynamicznego portfolio
 function renderPortfolio(category = "all") {
   portfolioContainer.innerHTML = "";
   const filteredProjects = portfolioData.filter(
@@ -238,7 +239,7 @@ function renderPortfolio(category = "all") {
 
   projectsToRender.forEach((project) => {
     const projectHTML = `
-      <div class="col-md-4 portfolio-item">
+      <div class="col-md-4 portfolio-item" data-id="${project.id}">
         <div class="card">
           <img src="${project.image}" class="card-img-top" alt="${project.title}">
           <div class="card-body">
@@ -260,6 +261,48 @@ function renderPortfolio(category = "all") {
   }
 }
 
+// Dodawanie modalów dla projektów
+function openModal(project) {
+  const modalHTML = `
+    <div class="modal show" id="projectModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>${project.title}</h5>
+          <button class="btn-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img src="${project.image}" alt="${project.title}" class="img-fluid mb-3">
+          <p>${project.description}</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-custom" onclick="closeModal()">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML("beforeend", modalHTML);
+}
+
+// Zamykanie modalów
+function closeModal() {
+  const modal = document.getElementById("projectModal");
+  if (modal) modal.remove();
+}
+
+// Obsługa kliknięć na projekty
+portfolioContainer.addEventListener("click", (e) => {
+  const item = e.target.closest(".portfolio-item");
+  if (item) {
+    const projectId = item.getAttribute("data-id");
+    const project = portfolioData.find((p) => p.id == projectId);
+    if (project) openModal(project);
+  }
+});
+
+// Inicjalizacja początkowego portfolio
+document.addEventListener("DOMContentLoaded", () => renderPortfolio());
+
+// Filtry
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     filterButtons.forEach((btn) => btn.classList.remove("active"));
@@ -271,6 +314,7 @@ filterButtons.forEach((button) => {
   });
 });
 
+// Obsługa przycisku "Załaduj więcej"
 loadMoreButton.addEventListener("click", () => {
   if (isShowingAll) {
     visibleProjects = 6;
@@ -280,10 +324,6 @@ loadMoreButton.addEventListener("click", () => {
   }
   renderPortfolio(currentCategory);
 });
-
-// Renderuj początkowe portfolio
-document.addEventListener("DOMContentLoaded", () => renderPortfolio());
-
 // Dodanie responsywności
 window.addEventListener("resize", () => {
   const windowWidth = window.innerWidth;
